@@ -1,0 +1,166 @@
+body{
+    padding: 0;
+    margin: 0;
+}
+
+.container{ 
+    display: grid;
+    height: 100vh;
+    grid-template-columns:
+        10px 
+        repeat(6,1fr)
+        10px
+    ;
+    grid-template-rows: 
+        100px
+        150px
+        20px
+        1fr
+    ;
+
+    grid-template-areas: 
+        "header header header header header header header header"
+        ". fotoCabecera fotoCabecera fotoCabecera fotoCabecera fotoCabecera fotoCabecera ."
+        ". . . . . . . ."
+        "container2 container2 container2 container2 container2 container2 container2 container2"
+    ;
+    
+}
+
+.container2{
+    grid-area: container2;
+    display: grid;
+    height: 100vh;
+    grid-template-columns:
+        10px 
+        repeat(6,1fr)
+        10px 
+    ;
+    grid-template-rows: 
+        250px
+        20px
+        230px
+    ;
+
+    grid-template-areas: 
+    ". . planContigo planContigo planContigo Video . ."
+    ". . . . . . . ."
+    ". . Noticia1 Noticia2 Noticia3 Noticia4 . ."
+    ;
+    gap: 25px;
+}
+
+
+.header{
+    grid-area: header;
+    background-color: rgb(159, 159, 236);
+}
+
+.fotoCabecera{
+    grid-area: fotoCabecera;
+    background-color: rgb(182, 235, 202);
+}
+
+.planContigo{
+    grid-area: planContigo;
+    background-color: rgb(230, 178, 178);
+}
+
+.Video{
+    grid-area: Video;
+    background-color: rgb(207, 184, 236);
+}
+
+.Noticia1{
+    grid-area: Noticia1;
+    background-color: rgb(240, 200, 162);
+}
+
+.Noticia2{
+    grid-area: Noticia2;
+    background-color: rgb(240, 162, 162);
+}
+
+.Noticia3{
+    grid-area: Noticia3;
+    background-color: rgb(192, 248, 215);
+}
+
+.Noticia4{
+    grid-area: Noticia4;
+    background-color: rgb(250, 203, 218);
+}
+
+.header,.fotoCabecera,.planContigo,.Video,.Noticia1,.Noticia2,.Noticia3,.Noticia4{
+    padding: 20px;
+    color: rgb(105, 104, 104);
+}
+
+@media screen and (max-width: 767px) and (min-width:320px){
+    .container{
+        display: grid;
+        height: 100vh;
+        grid-template-columns:
+            10px 
+            repeat(2,1fr)
+            10px
+        ;
+        grid-template-rows: 
+            100px
+            150px
+            20px
+            1fr
+        ;
+    
+        grid-template-areas: 
+            "header header header header"
+            ". fotoCabecera fotoCabecera ."
+            ". . . ."
+            ". container2 container2 ."
+        ;
+    }
+
+    .container2{
+        grid-area: container2;
+        display: grid;
+        height: 100vh;
+        grid-template-columns:
+            repeat(2,1fr)
+        ;
+        grid-template-rows: 
+            20px
+            230px
+            5px
+            230px
+        ;
+    
+        grid-template-areas: 
+        ". ."
+        "Noticia1 Noticia2"
+        ". ."
+        "Noticia3 Noticia4"
+        ;
+        gap: 25px;
+    }
+
+    .Noticia1{
+        grid-area: Noticia1;
+        background-color: rgb(240, 200, 162);
+    }
+    
+    .Noticia2{
+        grid-area: Noticia2;
+        background-color: rgb(240, 162, 162);
+    }
+
+    .planContigo{
+        display: none;
+        background-color: rgb(230, 178, 178);
+    }
+    
+    .Video{
+        display: none;
+        background-color: rgb(207, 184, 236);
+    }
+
+}
